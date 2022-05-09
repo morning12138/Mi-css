@@ -1,0 +1,9 @@
+@use "header";
+@use "homebody";
+@use "pageMain";
+@use "footer";
+$normal-font-size: 14px;
+body {
+    font-size: $normal-font-size;
+    margin: 0px;
+}

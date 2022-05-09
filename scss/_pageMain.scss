@@ -1,0 +1,101 @@
+@mixin hover-cool() {
+    transition: transform 0.5s;
+    transition: box-shadow 0.5s;
+    cursor: pointer;
+    &:hover {
+        transform: translate3d(0, -2px, 0);
+        box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+    }
+}
+
+$mi_color: rgb(255, 106, 0);
+.page-main {
+    background-color: rgb(245, 245, 245);
+    .big-ad {
+        width: 1226px;
+        margin: 0px auto;
+        padding: 22px 0px 0px 0px;
+    }
+    .big-ad img {
+        width: 1226px;
+    }
+    .phone-box {
+        width: 1226px;
+        margin: 40px auto;
+        .title {
+            display: flex;
+            justify-content: space-between;
+            color: #333;
+            font-weight: 200;
+            margin: 16px 0px;
+            .title-head {
+                font-size: 22px;
+            }
+            .show-more {
+                font-size: 16px;
+                transition: color 0.5s;
+                &:hover {
+                    color: $mi_color;
+                    cursor: pointer;
+                }
+            }
+            .hot-wear {
+                // background-color: red;
+                font-size: 18px;
+                span:first-child {
+                    position: relative;
+                    right: 20px;
+                }
+                span {
+                    cursor: pointer;
+                    transition: border-bottom 0.5s;
+                    transition: color 0.1s;
+                    &:hover {
+                        border-bottom: 2px solid $mi_color;
+                        color: $mi_color;
+                    }
+                }
+            }
+        }
+    }
+    .phone-main-box {
+        display: grid;
+        width: 1226px;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(2, 260px);
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        .long-box {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            background-color: #fff;
+            @include hover-cool;
+        }
+        .normal-box {
+            background-color: #fff;
+            @include hover-cool;
+        }
+        .short-box {
+            @include hover-cool;
+            background-color: #fff;
+            height: 120px;
+        }
+        .short-special {
+            display: grid;
+            grid-template-rows: 120px 120px;
+            grid-template-columns: auto;
+            grid-row-gap: 20px;
+        }
+    }
+    .video-main-box {
+        width: 1226px;
+        display: grid;
+        grid-column-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 285px);
+        .normal-box {
+            background-color: #fff;
+            @include hover-cool;
+        }
+    }
+}

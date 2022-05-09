@@ -1,0 +1,121 @@
+@mixin pic-color($color:rgb(173, 180, 234)) {
+    background-color: $color;
+    &:hover {
+        box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+        transition: box-shadow 0.3s;
+    }
+    cursor: pointer;
+}
+
+.home-hero {
+    width: 1226px;
+    margin: 0 auto;
+    .slides {
+        display: flex;
+        width: 234px;
+        height: 460px;
+        .goods-list {
+            ul {
+                background-color: rgba(105, 101, 101, .6);
+                height: 420px;
+                list-style: none;
+                margin: 0px;
+                padding: 20px 0px;
+                font-size: 14px;
+                color: #fff;
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 170px;
+                    height: 42px;
+                    padding: 0px 30px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: rgb(255, 106, 0);
+                    }
+                    span {
+                        line-height: 42px;
+                    }
+                    img {
+                        width: 14px;
+                    }
+                }
+            }
+        }
+        .lunbo {
+            min-width: 992px;
+            min-height: 460px;
+            overflow: hidden;
+            .save-pic {
+                min-width: 4960px;
+                min-height: 460px;
+                animation: run 30s infinite linear
+            }
+            img {
+                width: 992px;
+                height: 460px;
+                float: left;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@keyframes run {
+    0%,
+    10% {
+        margin-left: 0px;
+    }
+    20%,
+    30% {
+        margin-left: -992px;
+    }
+    40%,
+    50% {
+        margin-left: -1984px;
+    }
+    60%,
+    70% {
+        margin-left: -2976px;
+    }
+    80%,
+    90% {
+        margin-left: -3968px;
+    }
+}
+
+.ad-show {
+    margin: 14px 0px;
+    display: grid;
+    grid-template-columns: 228px repeat(3, 316px);
+    grid-template-rows: 170px;
+    grid-column-gap: 14px;
+    .services {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        color: #fff;
+        background-color: rgb(95, 87, 80);
+        div {
+            opacity: 0.7;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+                transition: opacity 0.5s;
+            }
+        }
+    }
+    .pic1 {
+        @include pic-color
+    }
+    .pic2 {
+        @include pic-color($color: rgb(154, 190, 224))
+    }
+    .pic3 {
+        @include pic-color($color: rgb(144, 190, 143))
+    }
+}
